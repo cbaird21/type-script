@@ -1,12 +1,4 @@
-let number: number = 100;
+// Constructor method for bigInt
+let bigInt1 = BigInt(945845);
 
-// floats are also numbers
-number = 28.7;
-number = -300;
-
-// you can also use an expression that evaluates as a number
-number = Infinity * .01;
-number = parseInt( string: '12');
-
-// type 'string' is not assignable to type 'number'
-number = "121"
+let biIng2 = 12345678n;
