@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "(npm parcel ./index.html) & npm parcel watch ./index.html"
+    "start": "(npx parcel ./index.html) & npx parcel watch ./index.html"
   },
   "repository": {
     "type": "git",
