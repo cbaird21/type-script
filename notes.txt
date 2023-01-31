@@ -1,0 +1,111 @@
+NOTES ON TYPESCRIPT
+
+TypeScript is a strongly typed programming language that builds on JavaScript.
+-Typescript: Strict typing, editor checks, auto-completeion, generics, OOP features, decorators
+
+
+-tsc index.ts command
+	-it goes through the entire typescript to ensure it's typescript compliant. Once compliant it creates javascript file.
+	-default value of this command will build regardless of if it has errors, even though It will show errors in terminal.
+
+-tsc --noEmitOnError index.ts
+	-This will override the error.
+	-in tsconfig you can uncomment out "noEmitOnError":true instead of having to run this command on load out.
+
+-tsc --help 
+	-this checks to help see if there's anything else to help us compile our typescript file to js file
+
+-tsc -p ./tsconfig.json 
+	-This makes it follow the rules of the config file
+
+// typescript is a transpiler
+// strict typing is a feature that that JS doesn't offer but typescript does
+// typescript is translated to JS on the tsc -p ./tsconfig.json command
+
+-npm init -y 
+	-creates package.json file
+-npm i parcel --save-dev 
+	-this will install parcel as a dev dependancy 
+	-this will help bundle our typescript
+	-fire a webserver and watches for changes to recompile to file
+-mkdir ./src
+	-making src directory
+-touch ./src/index.ts
+	-making index.ts file in src directory
+-npm i --save-dev --save-exact prettier
+	-installs prettier as a dev dependency
+- echo {}> .prettierrc.json
+	-creates prettier.json file
+
+
+**What are types?
+	- A "Type" is a definition assigned to a value and defines the things that you can or cannod do with that "kind" of value.
+
+Example:
+
+	let firstName:string = "Mark";
+	
+	// you CAN call all string Methods
+	let length = firstName.length;
+
+	//you CANNOT call number methods, firstName.toExponential(); would be underlined in vsCode immediately prompting the inconsistency.
+	let exponential = firstName.toExponential();
+
+Example:
+	
+You CAN do this!
+
+	//Anything following the : is the type you are allowing/accepting
+	const sequence:number[] = [45, 4, 9, 16, 25];
+	
+	//loop through the array
+	sequence.forEach((number) =>{
+		console.log(number);
+	});
+
+You CAN'T do this!
+	
+	let user: {} = {
+		name: "Mark",
+		location: "London",
+	};
+
+	// Trying to forEach on an object isn't accepted becuase forEach is for an array not object method
+	user.forEach((prop) => {
+		console.log(prop);
+	});
+
+
+TYPES OF TYPESCRIPT
+
+*Type Inference: This is how TS automatically infers or understands certain types in your code based on the delcaration of those types.
+
+*Primitive Types
+	-any:This is the default value of JS.This is a last resort. You want to avoid this in typeScript, you don't want JavaScript allowing any value such as string, interger or array.
+	-unknown: Better than any but TypeScript will error saying that object is a type of unknown, saying the argument might not be a number.
+	-boolean
+	-number
+	-string
+	-bigint
+
+*Object Types
+	-objects
+	-type aliases
+	-union types
+	-unions & primitives
+	-intersections
+	-index signatures
+
+*Advance Types
+	-null
+	-undefined
+	-void
+	-never
+	-enums
+
+*Arrays in TypeScript
+	-arrays
+	-tuples
+	-readonly
+
+
