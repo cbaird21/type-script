@@ -1,4 +1,5 @@
 function multiByTwo(number: unknown) {
+    // this if statement will allow it to check to ensure it's a number value otherwise it'll return please provide a valid number
      if (typeof number === "number"){
     return number * 2;
      }
