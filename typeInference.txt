@@ -27,4 +27,3 @@ function addNumber(a: number, b: number) {
 }
 
 finalResult = addNumber(10, 15);
-

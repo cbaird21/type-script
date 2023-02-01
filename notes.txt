@@ -2,7 +2,7 @@ NOTES ON TYPESCRIPT
 
 TypeScript is a strongly typed programming language that builds on JavaScript.
 -Typescript: Strict typing, editor checks, auto-completeion, generics, OOP features, decorators
-
+-
 
 -tsc index.ts command
 	-it goes through the entire typescript to ensure it's typescript compliant. Once compliant it creates javascript file.
@@ -79,6 +79,8 @@ You CAN'T do this!
 TYPES OF TYPESCRIPT
 
 *Type Inference: This is how TS automatically infers or understands certain types in your code based on the delcaration of those types.
+
+
 
 *Primitive Types
 	-any:This is the default value of JS.This is a last resort. You want to avoid this in typeScript, you don't want JavaScript allowing any value such as string, interger or array.
