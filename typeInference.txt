@@ -7,7 +7,7 @@
 // so if string didn't exist here, it would automatically assign it the type of string
 let firstname = "John";
 
-// this errors out becuase it's not a string
+// this errors out because it's not a string
 // firstname = 25;
 
 // by seeing it's a constant, it wouldn't be able to be overriden in a program
