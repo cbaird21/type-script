@@ -1,0 +1,31 @@
+// declare new type of Caterer to call throughout your application
+type Caterer = {
+  name: string;
+  address: string;
+  phone: number;
+};
+
+// creating type of Airplane to pass to const airplane
+type Airplane = {
+  model: string;
+  flightNumber: string;
+  // date is built in typeScript type by default
+  timeOfDeparture: Date;
+  timeOfArrival: Date;
+  // by creating Caterer as it's own type you're able too call it this way.
+  caterer: Caterer;
+};
+
+// giving airplane the :Airplane type
+// since it complies with the type, or if anything was missing, it would throw an error
+const airplane: Airplane = {
+  model: "Airbus A380",
+  flightNumber: "A2201",
+  timeOfDeparture: new Date(),
+  timeOfArrival: new Date(),
+  caterer: {
+    name: "Special Food Ltd",
+    address: "484, Some Street, New York",
+    phone: 1452125,
+  },
+};
