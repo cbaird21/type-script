@@ -1,0 +1,32 @@
+// ageUnit which an enum of years and months
+// so now age can be age and months
+enum AgeUnit {
+  years = "years",
+  months = "months",
+}
+// create a greeting Function to be able to better call it in type Person
+//   how we tell typescript this will be a function call signature
+type greetingFunction = (greeting: string) => string;
+
+// CUSTOM TYPE
+type Person = {
+  name: string;
+  age: number;
+  //   this can be either years or months
+  ageUnit: AgeUnit;
+  country: string;
+  greet: greetingFunction;
+};
+
+const person: Person = {
+  name: "Chandler",
+  age: 28.5,
+  // this is saying to give age unit in years
+  ageUnit: AgeUnit.years,
+  country: "USA",
+  greet: (greeting:string) => {
+    return `${greeting} ${person.name}`}
+};
+
+console.log(person.greet("Good morning"))
+// Good morning Chandler
