@@ -6,7 +6,7 @@ function intro(name: string, age: number): string {
 }
 
 // function expression
-const intro = function intro(name: string, age: number): string {
+const intro2 = function intro(name: string, age: number): string {
   return `My name is ${name} and agae is ${age}`;
 };
 
