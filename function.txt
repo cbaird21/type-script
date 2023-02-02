@@ -1,0 +1,10 @@
+*Basic functions in type typeScript
+
+-Declaring Functions: the concept of declaring type safe functions in typescript and applying types to fuunction perameters
+
+-Default and optional parameters: We learn how to declare default and optional parameters to functions in typescript
+
+-How to gain control of our functions
+    -custom parameters
+    -custom returns
+    -call signatures
