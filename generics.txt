@@ -1,0 +1,24 @@
+Generics  <T>
+-doesn't exist in JavaScript
+-does in other strict languages such as C++ and JavaScript
+
+****Polymorphism Functions****
+At its base level, a polymorphism is part of mathematic type theory. In computer science, a polymorphic object is an object that is capable of taking on multiple forms. The kind of polymorphism the object undergoes depends on when the object takes its form and what part of the object is transforming.
+
+**4 Types of Polymorphism
+1. Subtype polymorphism (Runtime)
+2. Ad hoc polymorphism (Compile-time)
+3. Parametric polymorphism (Overloading)
+4. Coercion polymorphism(Casting)
+
+- <> is the syntax Generic, type T, is what's common
+- the common is start at T so another generic would be a U etc
+- whenever I pass in type T is passed then the predicate gets an item of type T
+
+*Generic
+  <T>(array: T[], predicate: (item: T) => boolean): T[];
+
+*verbose code generic replaced
+  (array:number[], predicate: (item:number) => boolean):number[];
+  (array:string[], predicate: (item:string) => boolean):string[];
+  (array:object[], predicate: (item:object) => boolean):object[];
