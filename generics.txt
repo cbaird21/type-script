@@ -3,7 +3,7 @@ Generics  <T>
 -does in other strict languages such as C++ and JavaScript
 
 ****Polymorphism Functions****
-At its base level, a polymorphism is part of mathematic type theory. In computer science, a polymorphic object is an object that is capable of taking on multiple forms. The kind of polymorphism the object undergoes depends on when the object takes its form and what part of the object is transforming.
+A function that can evaluate to or be applied to values of different types is known as a polymorphic function. A data type that can appear to be of a generalized type (e.g. a list with elements of arbitrary type) is designated polymorphic data type like the generalized type from which such specializations are made.
 
 **4 Types of Polymorphism
 1. Subtype polymorphism (Runtime)

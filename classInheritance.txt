@@ -1,0 +1,24 @@
+TypeScript classes can do more than typeScript
+
+What are classes?
+-In object-oriented programming, a class is a blueprint for creating objects. A class defines the inital values of various properties and methods of an object.
+
+What is an instance of a class?
+
+What are constructor functions?
+
+What is `this` keyword?
+
+What is inheritance?
+
+How can classes be used for inheritance?
+
+What are Access Modifiers?
+
+What are Protected, Private and public access modifiers? How can they be used in conjection with classes.
+
+What are Accessors and mutators?
+
+Why are they needed and how are they helpful? structure classes and hiding code from public.
+
+
