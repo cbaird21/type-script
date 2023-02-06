@@ -5,7 +5,7 @@
 // Read-Only: Read-Only member variables do not allow changes to the value of variable once they are initialized.
 
 class Human {
-  private name: string;
+  protected name: string;
   public age: number;
 
   constructor(name: string, age: number) {
@@ -18,6 +18,15 @@ class Human {
   }
 }
 
+class Admin extends Human {
+  public returnName() {
+    return this.name;
+  }
+}
+
+const admin: Admin = new Admin("mark", 42);
+
 let human: Human = new Human("Edyta", 30);
 console.log(human.getName());
 // returns Edyta
+console.log(admin.returnName());
