@@ -5,9 +5,10 @@
 // Read-Only: Read-Only member variables do not allow changes to the value of variable once they are initialized.
 
 class Human {
+    // declaring property names
   protected name: string;
   public age: number;
-
+    // assigning name and age value to the declared property names
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
