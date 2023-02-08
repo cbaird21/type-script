@@ -1,20 +1,37 @@
 //  shorthand syntax for
 class Human {
-  constructor(protected name: string, private age: number) {}
-  // adding getName method
-  public getName() {
-    return this.name;
+  private testUsersAge(age: number) {
+    if (age > 200 || age < 0) {
+      throw new Error("The age must be within range of 0-200");
+    }
+    return age;
   }
-}
-class Admin extends Human {
-  public returnName() {
-    return this.name;
+  // dont want age to be less than 0 or greater than 200
+  constructor(private _name: string, private _age: number) {
+    this.testUsersAge(_age);
+    this._age = _age;
+  }
+
+  public set name(name: string) {
+    this._name = name;
+  }
+  public get name() {
+    return this._name;
+  }
+
+  public set age(age: number) {
+    this.testUsersAge(age);
+    this._age = age;
+  }
+  public get age() {
+    return this._age;
   }
 }
 
-const admin: Admin = new Admin("mark", 42);
+const bob: Human = new Human("Cali", 25);
+bob.age = 25;
 
-let human: Human = new Human("Edyta", 30);
-console.log(human.getName());
-// returns Edyta
-console.log(admin.returnName());
+// accesses the property on the method
+console.log(bob.age);
+// invoking the getname method on the bob object
+console.log(bob.name);
