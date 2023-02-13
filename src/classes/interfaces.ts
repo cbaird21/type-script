@@ -18,3 +18,31 @@ const fish: Fish = {
   email: "Nemo@stayingalive.com",
   age: 4,
 };
+
+interface User {
+  name: string;
+  email: string;
+  phone: number;
+  gender: string;
+}
+
+// need seperate interface for users with address
+// you can extend User like you can extend types
+interface UserWithAddress extends User {
+  address: string;
+}
+
+const user: User = {
+  name: "Chandler",
+  email: "chan@fake.com",
+  phone: 8745694857,
+  gender: "male",
+};
+
+const userWithAddress: UserWithAddress = {
+  name: "apple",
+  email: "app@fake.com",
+  phone: 8745694857,
+  gender: "male",
+  address: "this is an address",
+};
