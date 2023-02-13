@@ -11,6 +11,7 @@ type Holidays = {
 abstract class Department {
   // brings in the abstract type of holidays, of type Holidays
   protected abstract holidays: Holidays;
+
   //   constructor can only be accessed by the child classes
   protected constructor(protected name: string) {}
   //   implement a public method so all the child classes inherit this method vs creating seperate methods within the child class
@@ -23,21 +24,9 @@ abstract class Department {
       }
     }
   }
-  //   creating print holidays method
-  // check to see if length of holidays is greater than zero
-  public printHolidays() {
-    if (this.holidays.length === 0) {
-      return console.log("There are no holidays");
-    }
-    console.log("Here is the list of the holidays");
-    // grab holiday property to loop
-    this.holidays.forEach(
-      (holiday: { date: Date; reason: string }, index: number) => {
-        // able to access from template literals, this gives some structured response.
-        console.log(`${index + 1}. ${holiday.reason}. ${holiday.date}`);
-      }
-    );
-  }
+  //   abstract method in department class, it's the signature every child class will have to implement.
+  //   abstract methods are definitions but not a body
+  public abstract printHolidays(): void;
 }
 
 // create child classes of the Department class from inheritance
@@ -48,6 +37,20 @@ class ItDepartment extends Department {
   constructor() {
     super("IT Department");
   }
+  //   here is the list for our it department
+  public printHolidays() {
+    if (this.holidays.length === 0) {
+      return console.log("There are no holidays");
+    }
+    console.log(`Here is the list of the holidays ${this.name}`);
+    // grab holiday property to loop
+    this.holidays.forEach(
+      (holiday: { date: Date; reason: string }, index: number) => {
+        // able to access from template literals, this gives some structured response.
+        console.log(`${index + 1}. ${holiday.reason}. ${holiday.date}`);
+      }
+    );
+  }
 }
 
 class AdminDepartment extends Department {
@@ -55,6 +58,20 @@ class AdminDepartment extends Department {
 
   constructor() {
     super("Admin Department");
+  }
+  //   here is the list for our it department
+  public printHolidays() {
+    if (this.holidays.length === 0) {
+      return console.log("There are no holidays");
+    }
+    console.log(`Here is the list of the holidays ${this.name}`);
+    // grab holiday property to loop
+    this.holidays.forEach(
+      (holiday: { date: Date; reason: string }, index: number) => {
+        // able to access from template literals, this gives some structured response.
+        console.log(`${index + 1}. ${holiday.reason}. ${holiday.date}`);
+      }
+    );
   }
 }
 // create an array of holidays for IT and admin
