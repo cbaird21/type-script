@@ -11,6 +11,7 @@ type Holidays = {
 abstract class Department {
   // brings in the abstract type of holidays, of type Holidays
   protected abstract holidays: Holidays;
+  //   constructor can only be accessed by the child classes
   protected constructor(protected name: string) {}
   //   implement a public method so all the child classes inherit this method vs creating seperate methods within the child class
   public addHolidays(holidays: Holidays) {
@@ -28,8 +29,16 @@ abstract class Department {
 // child class must implement abstract holidays
 class ItDepartment extends Department {
   protected holidays: Holidays = [];
+  // the super method allows us to access the protected constructor from the parent class
+  constructor() {
+    super("IT Department");
+  }
 }
 
 class AdminDepartment extends Department {
   protected holidays: Holidays = [];
+
+  constructor() {
+    super("Admin Department");
+  }
 }
