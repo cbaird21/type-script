@@ -23,6 +23,21 @@ abstract class Department {
       }
     }
   }
+  //   creating print holidays method
+  // check to see if length of holidays is greater than zero
+  public printHolidays() {
+    if (this.holidays.length === 0) {
+      return console.log("There are no holidays");
+    }
+    console.log("Here is the list of the holidays");
+    // grab holiday property to loop
+    this.holidays.forEach(
+      (holiday: { date: Date; reason: string }, index: number) => {
+        // able to access from template literals, this gives some structured response.
+        console.log(`${index + 1}. ${holiday.reason}. ${holiday.date}`);
+      }
+    );
+  }
 }
 
 // create child classes of the Department class from inheritance
@@ -42,3 +57,37 @@ class AdminDepartment extends Department {
     super("Admin Department");
   }
 }
+// create an array of holidays for IT and admin
+const itHolidays: Holidays = [
+  {
+    date: new Date(2022, 12, 25),
+    reason: "Christmas",
+  },
+  {
+    date: new Date(2022, 12, 10),
+    reason: "IT Department Day",
+  },
+];
+
+const adminHolidays: Holidays = [
+  {
+    date: new Date(2022, 12, 25),
+    reason: "Christmas",
+  },
+  {
+    date: new Date(2022, 10, 01),
+    reason: "Admin Department Day",
+  },
+];
+
+const itDepartment: ItDepartment = new ItDepartment();
+const adminDepartment: AdminDepartment = new AdminDepartment();
+// adding the holidays to the correct class
+// method of add holidays
+itDepartment.addHolidays(itHolidays);
+adminDepartment.addHolidays(adminHolidays);
+
+// shows that the child classes are inheriting the parent class
+// method of printHolidays
+itDepartment.printHolidays();
+adminDepartment.printHolidays();
