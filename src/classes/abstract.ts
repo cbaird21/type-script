@@ -1,4 +1,4 @@
-// abstract members need to be implemented in child class, 
+// abstract members need to be implemented in child class,
 
 // abstract classes can't be instantiated
 // different from normal classes, can't use new keyword in abstract classes
@@ -12,6 +12,16 @@ abstract class Department {
   // brings in the abstract type of holidays, of type Holidays
   protected abstract holidays: Holidays;
   protected constructor(protected name: string) {}
+  //   implement a public method so all the child classes inherit this method vs creating seperate methods within the child class
+  public addHolidays(holidays: Holidays) {
+    // checks if holidays is an array or not
+    // abstract declaration of holidays, typescript knows it will be required for the child class
+    if (Array.isArray(holidays)) {
+      for (const holiday of holidays) {
+        this.holidays.push(holiday);
+      }
+    }
+  }
 }
 
 // create child classes of the Department class from inheritance
